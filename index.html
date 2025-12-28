@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heaton Plumbing, Inc. | 24/7 Plumber in La Porte, TX</title>
+    <meta name="description" content="Need a plumber fast? Heaton Plumbing offers 24/7 emergency service, drain cleaning, and water heater repair in La Porte, Pasadena, & Baytown. Call (281) 842-7473 for a free estimate!">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --brand-blue: #2563eb;
+            --brand-dark: #0f172a;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Lexend', sans-serif;
+        }
+        
+        /* UX Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-3%); }
+            50% { transform: none; }
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+
+        .map-container {
+            position: relative;
+            filter: grayscale(0.1) contrast(1.05);
+            transition: filter 0.3s ease;
+        }
+        .map-container:hover {
+            filter: grayscale(0);
+        }
+
+        [data-lucide] {
+            width: 18px;
+            height: 18px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Top Banner -->
+    <div class="bg-blue-600 text-white py-1 px-4 text-center text-[10px] font-bold tracking-widest uppercase">
+        <div class="container mx-auto flex justify-center items-center gap-2.5">
+            <i data-lucide="shield-check" class="w-3 h-3 text-blue-200"></i>
+            <span>Licensed & Insured • Open 24/7 • Serving La Porte & Surroundings</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 glass-nav border-b border-slate-50">
+        <nav class="container mx-auto px-4 md:px-6 flex justify-between items-center h-14 md:h-16">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="bg-blue-600 p-1.5 rounded-md text-white shadow-md group-hover:scale-105 transition-transform">
+                    <i data-lucide="droplets" class="w-4 h-4"></i>
+                </div>
+                <div>
+                    <span class="block text-base md:text-lg font-black text-slate-900 leading-none">Heaton Plumbing</span>
+                    <span class="text-[8px] tracking-[0.1em] text-blue-600 font-bold uppercase">Trusted Since 1999</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center gap-6">
+                <a href="#services" class="text-slate-600 hover:text-blue-600 text-xs font-bold transition-colors">Services</a>
+                <a href="#why-us" class="text-slate-600 hover:text-blue-600 text-xs font-bold transition-colors">Why Us</a>
+                <a href="#process" class="text-slate-600 hover:text-blue-600 text-xs font-bold transition-colors">Process</a>
+                <a href="#faq" class="text-slate-600 hover:text-blue-600 text-xs font-bold transition-colors">FAQ</a>
+                <a href="tel:2818427473" class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-[11px] font-black hover:bg-blue-600 transition-all shadow-sm">
+                    <i data-lucide="phone" class="w-3 h-3 text-blue-400"></i>
+                    (281) 842-7473
+                </a>
+            </div>
+
+            <button id="mobile-menu-toggle" class="lg:hidden p-1.5 text-slate-900 bg-slate-50 rounded-md">
+                <i data-lucide="menu"></i>
+                <i data-lucide="x" class="hidden"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-xl py-4 px-6 space-y-3">
+            <a href="#services" class="mobile-nav-link flex items-center gap-3 text-base font-bold text-slate-800"><i data-lucide="wrench" class="text-blue-600 w-4 h-4"></i> Services</a>
+            <a href="#why-us" class="mobile-nav-link flex items-center gap-3 text-base font-bold text-slate-800"><i data-lucide="thumbs-up" class="text-blue-600 w-4 h-4"></i> Why Us</a>
+            <a href="#process" class="mobile-nav-link flex items-center gap-3 text-base font-bold text-slate-800"><i data-lucide="activity" class="text-blue-600 w-4 h-4"></i> Process</a>
+            <a href="#faq" class="mobile-nav-link flex items-center gap-3 text-base font-bold text-slate-800"><i data-lucide="help-circle" class="text-blue-600 w-4 h-4"></i> FAQ</a>
+            <div class="pt-3 border-t border-slate-100">
+                <a href="tel:2818427473" class="flex items-center justify-center gap-2 bg-blue-600 text-white py-3 rounded-xl font-black text-base shadow-md">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    (281) 842-7473
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-6 pb-12 lg:pt-12 lg:pb-20 overflow-hidden">
+            <div class="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-slate-50 -z-10 lg:rounded-l-[80px]"></div>
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-10">
+                    <div class="lg:w-7/12 text-center lg:text-left reveal">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[9px] font-black mb-5 border border-blue-100 uppercase tracking-widest">
+                            <span class="flex h-1 w-1 rounded-full bg-blue-600 animate-pulse"></span>
+                            Now Dispatching in La Porte, TX
+                        </div>
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-[1.2] mb-5">
+                            Local Plumbing Help, <br class="hidden lg:block"><span class="text-blue-600">When You Need It.</span>
+                        </h1>
+                        <p class="text-sm md:text-base text-slate-600 mb-8 max-w-lg leading-relaxed">
+                            Burst pipes, cold showers, or clogged drains? Heaton Plumbing delivers honest, expert service for La Porte families—available 24/7 with zero hidden fees.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start">
+                            <a href="tel:2818427473" class="w-full sm:w-auto bg-blue-600 text-white px-8 py-3.5 rounded-xl font-black text-lg flex items-center justify-center gap-2.5 hover:bg-slate-900 transition-all shadow-lg shadow-blue-50 group">
+                                <i data-lucide="phone-call" class="w-5 h-5 group-hover:animate-bounce"></i>
+                                (281) 842-7473
+                            </a>
+                            <a href="#services" class="w-full sm:w-auto bg-white text-slate-700 border border-slate-200 px-8 py-3.5 rounded-xl font-bold text-base flex items-center justify-center hover:border-blue-600 hover:text-blue-600 transition-all">
+                                View Services
+                            </a>
+                        </div>
+                        <div class="mt-8 flex flex-wrap items-center gap-6 justify-center lg:justify-start">
+                            <div class="flex flex-col">
+                                <div class="flex text-amber-400 mb-0.5">
+                                    <i data-lucide="star" class="fill-current w-3.5 h-3.5"></i>
+                                    <i data-lucide="star" class="fill-current w-3.5 h-3.5"></i>
+                                    <i data-lucide="star" class="fill-current w-3.5 h-3.5"></i>
+                                    <i data-lucide="star" class="fill-current w-3.5 h-3.5"></i>
+                                    <i data-lucide="star" class="fill-current w-3.5 h-3.5"></i>
+                                </div>
+                                <span class="font-bold text-[11px] text-slate-900">4.7 Rating (279+ Reviews)</span>
+                            </div>
+                            <div class="h-6 w-px bg-slate-200 hidden sm:block"></div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="text-green-600 w-4 h-4"></i>
+                                <span class="block font-bold text-slate-900 text-[11px]">Licensed & Insured • 25+ Yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-5/12 relative reveal" style="transition-delay: 100ms;">
+                        <div class="relative rounded-[24px] overflow-hidden shadow-xl border-[6px] border-white">
+                            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=1000" alt="Professional Plumber Repairing Sink" class="w-full h-auto object-cover aspect-[5/6]">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-md border border-slate-100">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="bg-blue-600 p-2 rounded-lg text-white">
+                                        <i data-lucide="clock" class="w-4 h-4"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Status</span>
+                                        <span class="text-sm font-black text-slate-900 leading-none">Dispatcher Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="mb-12 reveal">
+                    <h2 class="text-blue-600 font-black uppercase tracking-[0.2em] text-[10px] mb-2">Our Expertise</h2>
+                    <p class="text-2xl md:text-3xl font-black text-slate-900">Service You Can Count On.</p>
+                </div>
+                <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- Cards injected -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process" class="py-16 bg-slate-50 reveal">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-2">How We Work</h2>
+                    <p class="text-slate-500 text-sm">3 steps to solving your plumbing issues.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 text-center shadow-sm">
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center text-lg font-black mx-auto mb-4">1</div>
+                        <h4 class="text-lg font-black text-slate-900 mb-2">The Call</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Speak with a local expert 24/7. We listen and dispatch fast.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 text-center shadow-sm">
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center text-lg font-black mx-auto mb-4">2</div>
+                        <h4 class="text-lg font-black text-slate-900 mb-2">The Quote</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Upfront pricing before work starts. No hidden surprises.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 text-center shadow-sm">
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center text-lg font-black mx-auto mb-4">3</div>
+                        <h4 class="text-lg font-black text-slate-900 mb-2">The Fix</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">We fix it right, test it out, and leave your home spotless.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map & Area -->
+        <section class="py-16 bg-white reveal">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="bg-slate-900 rounded-[24px] overflow-hidden flex flex-col lg:flex-row shadow-lg">
+                    <div class="lg:w-5/12 p-8 lg:p-12 flex flex-col justify-center">
+                        <h2 class="text-2xl lg:text-3xl font-black text-white mb-4">La Porte's Local Pro.</h2>
+                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Dispatched from the heart of La Porte for the fastest possible response in Southeast Houston.</p>
+                        <div class="grid grid-cols-2 gap-y-4 mb-8">
+                            <div class="flex items-center gap-2 text-white font-bold text-xs"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-500"></i> La Porte</div>
+                            <div class="flex items-center gap-2 text-white font-bold text-xs"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-500"></i> Pasadena</div>
+                            <div class="flex items-center gap-2 text-white font-bold text-xs"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-500"></i> Deer Park</div>
+                            <div class="flex items-center gap-2 text-white font-bold text-xs"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-500"></i> Baytown</div>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex items-center gap-3">
+                            <i data-lucide="navigation" class="w-5 h-5 text-blue-500"></i>
+                            <p class="text-slate-400 text-xs">309 Valley Brook Dr, La Porte, TX 77571</p>
+                        </div>
+                    </div>
+                    <div class="lg:w-7/12 min-h-[300px] map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.4646706912383!2d-95.0345!3d29.6547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863f5d5357870001%3A0x8677f5e3f360879b!2s309%20Valley%20Brook%20Dr%2C%20La%20Porte%2C%20TX%2077571!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-16 bg-slate-50 reveal">
+            <div class="container mx-auto px-4 md:px-6 max-w-2xl text-center">
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-10">Common Questions</h2>
+                <div class="space-y-2 text-left">
+                    <div class="faq-item group border rounded-xl bg-white border-slate-100 shadow-sm overflow-hidden">
+                        <button class="faq-toggle w-full px-5 py-4 text-left flex justify-between items-center gap-4">
+                            <span class="text-sm font-black text-slate-800">Do you offer 24/7 service?</span>
+                            <i data-lucide="plus" class="faq-icon w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-4 text-slate-600 text-[13px] leading-relaxed">
+                            Yes! We are available around the clock for any plumbing emergency in La Porte and surrounding areas.
+                        </div>
+                    </div>
+                    <div class="faq-item group border rounded-xl bg-white border-slate-100 shadow-sm overflow-hidden">
+                        <button class="faq-toggle w-full px-5 py-4 text-left flex justify-between items-center gap-4">
+                            <span class="text-sm font-black text-slate-800">Are estimates free?</span>
+                            <i data-lucide="plus" class="faq-icon w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-4 text-slate-600 text-[13px] leading-relaxed">
+                            We offer free on-site diagnostics for most repairs so you know the cost upfront with zero pressure.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-16 bg-white reveal">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="max-w-4xl mx-auto bg-blue-600 rounded-[32px] p-10 md:p-14 text-white shadow-xl text-center relative overflow-hidden">
+                    <h2 class="text-3xl md:text-4xl font-black mb-5">Need Help Now?</h2>
+                    <p class="text-blue-100 text-base mb-8 max-w-xl mx-auto">Call our local dispatch team for immediate assistance. We're ready to help 24/7.</p>
+                    <a href="tel:2818427473" class="inline-flex items-center gap-3 bg-white text-blue-600 px-10 py-4 rounded-xl font-black text-xl hover:scale-105 transition-all shadow-md">
+                        <i data-lucide="phone-outgoing" class="w-6 h-6"></i>
+                        (281) 842-7473
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white pt-16 pb-10">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="bg-blue-600 p-1.5 rounded-md text-white"><i data-lucide="droplets" class="w-5 h-5"></i></div>
+                        <span class="text-lg font-black text-white uppercase tracking-tight">Heaton Plumbing</span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-xs leading-relaxed">Local, licensed, and trusted in La Porte, TX since 1999.</p>
+                </div>
+                <div>
+                    <h4 class="font-black text-[10px] mb-4 text-white uppercase tracking-widest">Connect</h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-500"></i>
+                            <a href="tel:2818427473" class="text-slate-400 hover:text-white transition-colors text-sm">(281) 842-7473</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex justify-between items-center text-slate-500 font-bold text-[10px]">
+                <p>© 2024 Heaton Plumbing, Inc.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-300">Privacy</a>
+                    <a href="#" class="hover:text-slate-300">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Detail Modal -->
+    <div id="service-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-lg rounded-[20px] shadow-2xl overflow-hidden relative" onclick="event.stopPropagation()">
+            <!-- Explicit close button with onclick -->
+            <button id="close-modal-btn" onclick="closeServiceModal()" class="absolute top-4 right-4 p-2 bg-slate-50 rounded-lg hover:bg-slate-100 transition-all z-[110] text-slate-600 shadow-sm border border-slate-100">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div id="modal-content" class="p-6 md:p-8">
+                <!-- dynamic -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile CTA -->
+    <div class="lg:hidden fixed bottom-4 left-4 right-4 z-40">
+        <a href="tel:2818427473" class="w-full bg-slate-900 text-white py-4 rounded-xl font-black text-lg flex items-center justify-center gap-2 shadow-2xl animate-bounce-slow">
+            <i data-lucide="phone" class="text-blue-400 w-5 h-5"></i>
+            (281) 842-7473
+        </a>
+    </div>
+
+    <script>
+        const servicesData = [
+            {
+                title: "Emergency Repair",
+                description: "Burst pipes or backups? We respond 24/7 to save your home.",
+                icon: "clock",
+                longDescription: "Our rapid-response teams are stationed locally to reach you in under 90 minutes for critical issues.",
+                details: ["Burst pipes", "Gas leaks", "Water shut-off", "Main backups"]
+            },
+            {
+                title: "Drain Cleaning",
+                description: "Pro hydro-jetting to clear the most stubborn, recurring clogs.",
+                icon: "wrench",
+                longDescription: "We use industrial-grade equipment to scrub your pipes clean of grease, hair, and buildup.",
+                details: ["Hydro-jetting", "Video inspections", "Root removal", "Sink clogs"]
+            },
+            {
+                title: "Water Heaters",
+                description: "Same-day repair or replacement for tank and tankless systems.",
+                icon: "flame",
+                longDescription: "Hot water restored same-day. We specialize in both traditional tanks and high-efficiency tankless units.",
+                details: ["Tank replace", "Tankless install", "Maintenance", "Pilot repair"]
+            },
+            {
+                title: "Leak Detection",
+                description: "Advanced technology to find hidden leaks behind walls or slabs.",
+                icon: "search",
+                longDescription: "Non-invasive detection finds the exact source without tearing up your home unnecessarily.",
+                details: ["Slab leaks", "Thermal imaging", "Wall leaks", "Meter testing"]
+            },
+            {
+                title: "Sewer Repair",
+                description: "Comprehensive diagnostics and repair for your main line.",
+                icon: "droplets",
+                longDescription: "Sewer backups are health hazards. We provide modern solutions that preserve your landscape.",
+                details: ["Line replace", "Spot repairs", "Clean-out", "Diagnostics"]
+            },
+            {
+                title: "Fixtures",
+                description: "Professional installation for faucets, toilets, and disposals.",
+                icon: "hammer",
+                longDescription: "Precision installation that prevents future leaks and ensures long-term functionality.",
+                details: ["Upgrades", "Toilet installs", "Disposals", "Valves"]
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            const grid = document.getElementById('services-grid');
+            servicesData.forEach((service, index) => {
+                const card = document.createElement('div');
+                card.className = "reveal bg-slate-50 p-6 rounded-2xl border border-slate-100 transition-all hover:-translate-y-1 hover:shadow-md hover:bg-white group cursor-pointer relative";
+                card.style.transitionDelay = `${index * 50}ms`;
+                card.innerHTML = `
+                    <div class="bg-white w-12 h-12 rounded-lg flex items-center justify-center shadow-sm mb-5 group-hover:bg-blue-600 transition-colors">
+                        <i data-lucide="${service.icon}" class="w-6 h-6 text-blue-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-slate-900 mb-2">${service.title}</h3>
+                    <p class="text-slate-600 text-[13px] leading-relaxed mb-5 line-clamp-3">${service.description}</p>
+                    <div class="text-blue-600 font-black text-[10px] uppercase tracking-widest flex items-center gap-1.5">
+                        Details <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                `;
+                card.onclick = () => openServiceModal(service);
+                grid.appendChild(card);
+                observer.observe(card);
+            });
+            lucide.createIcons();
+
+            const toggle = document.getElementById('mobile-menu-toggle');
+            toggle.onclick = () => {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+                document.querySelector('[data-lucide="menu"]').parentElement.classList.toggle('hidden');
+                document.querySelector('[data-lucide="x"]').parentElement.classList.toggle('hidden');
+            };
+
+            document.querySelectorAll('.faq-toggle').forEach(button => {
+                button.onclick = () => {
+                    const item = button.parentElement;
+                    const content = item.querySelector('.faq-content');
+                    const icon = item.querySelector('.faq-icon');
+                    const isOpen = !content.classList.contains('hidden');
+                    document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                    document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-45'));
+                    if (!isOpen) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('rotate-45');
+                    }
+                };
+            });
+
+            document.getElementById('service-modal').onclick = () => closeServiceModal();
+        });
+
+        function openServiceModal(service) {
+            const modal = document.getElementById('service-modal');
+            const content = document.getElementById('modal-content');
+            content.innerHTML = `
+                <div class="flex items-center gap-4 mb-5">
+                    <div class="bg-blue-600 p-3 rounded-xl text-white">
+                        <i data-lucide="${service.icon}" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 leading-tight">${service.title}</h3>
+                        <p class="text-blue-600 font-bold text-[9px] uppercase tracking-widest mt-0.5">Professional Help</p>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">"${service.longDescription}"</p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                        <ul class="grid gap-2.5">
+                            ${service.details.map(detail => `<li class="flex items-center gap-2 text-slate-700 font-bold text-[11px]"><div class="w-1 h-1 rounded-full bg-blue-600"></div> ${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="flex gap-2.5 pt-2">
+                        <a href="tel:2818427473" class="flex-1 bg-slate-900 text-white py-3.5 rounded-xl font-black text-base flex items-center justify-center gap-2 hover:bg-blue-600 transition-all">
+                            <i data-lucide="phone" class="w-4 h-4"></i> Call Dispatch
+                        </a>
+                        <button onclick="closeServiceModal()" class="px-5 bg-slate-100 text-slate-600 rounded-xl font-bold text-[11px] hover:bg-slate-200 transition-all">Close</button>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeServiceModal() {
+            document.getElementById('service-modal').classList.add('hidden');
+            document.body.style.overflow = 'unset';
+        }
+    </script>
+</body>
+</html>
